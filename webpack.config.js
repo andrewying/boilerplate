@@ -22,6 +22,9 @@ const config = {
     filename: 'js/app.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass'],
+  },
   module: {
     rules: [
       {
@@ -84,10 +87,9 @@ const config = {
       hash: false,
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.tmpl.html'),
-      favicon: path.resolve(__dirname, 'src', 'images', 'favicon.ico'),
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/app.css',
     }),
     new ImageMinPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i }),
     new CleanWebpackPlugin({
